@@ -50,6 +50,9 @@ function App() {
       return cp
     })
   }
+  const clear = () => {
+    setGrid(Array(size).fill(Array(size).fill(0)))
+  }
 
   React.useEffect(() => {
     const togglePlaying = (e: KeyboardEvent) => {
@@ -100,6 +103,7 @@ function App() {
       <button onClick={() => setIsPlaying(!isPlaying)}>
         {isPlaying ? 'Pause' : 'Start'}
       </button>
+      <button onClick={clear}>Clear</button>
       <label>
         Speed ({speed}ms):
         <input
